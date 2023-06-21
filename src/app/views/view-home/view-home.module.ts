@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ViewHomeRoutingModule } from './view-home-routing.module';
 import { UiModule } from '../../ui/ui.module';
 import { ViewHomeComponent } from './view-home.component';
+import { AbstractViewComponent } from '../abstract-view/abstract-view.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ViewHomeComponent } from './view-home.component';
   imports: [
     CommonModule,
     ViewHomeRoutingModule,
-    UiModule
+    UiModule,
+    AbstractViewComponent
   ]
 })
 export class ViewHomeModule { }

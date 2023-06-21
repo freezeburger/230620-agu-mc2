@@ -1,18 +1,16 @@
-import { Component, Inject } from '@angular/core';
-import { PresenterService } from 'src/app/core/presenter.service';
+import { Component } from '@angular/core';
+import { AbstractViewComponent } from '../abstract-view/abstract-view.component';
 
 @Component({
   selector: 'app-view-home',
   templateUrl: './view-home.component.html',
-  styleUrls: ['./view-home.component.scss']
+  styleUrls: ['./view-home.component.scss'],
 })
-export class ViewHomeComponent {
+export class ViewHomeComponent extends AbstractViewComponent {
 
-
-  constructor(
-    @Inject(PresenterService) public presenter:PresenterService
-  ){
-    console.log(this.presenter)
-  }
+/*   constructor(){
+    super();
+    this.show();
+  } */
 
 }
