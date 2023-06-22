@@ -7,5 +7,9 @@ import { AbstractViewComponent } from '../abstract-view/abstract-view.component'
   styleUrls: ['./view-product.component.scss']
 })
 export class ViewProductComponent  extends AbstractViewComponent {
+  userSelectedImage = ''
 
+  onSelection( url:string ){
+    this.userSelectedImage = url;
+  }
 }

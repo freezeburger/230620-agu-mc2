@@ -4,5 +4,28 @@
   {{ presenter.state$ | async | json }}
 </code>
 
+<hr>
 
-<app-ui-image></app-ui-image>
+<code>
+  {{ userSelectedImage }}
+</code>
+
+<hr>
+
+<app-ui-image
+    appImgZoom
+    (selected)="onSelection($event)"
+    source="https://picsum.photos/200/300">
+</app-ui-image>
+
+<app-ui-image
+  appImgZoom
+  (selected)="onSelection($event)"
+  [source]="  'https://picsum.photos/200/301'   ">
+</app-ui-image>
+
+<app-ui-image
+  (selected)="onSelection($event)"
+  appImgZoom>
+</app-ui-image>
+
