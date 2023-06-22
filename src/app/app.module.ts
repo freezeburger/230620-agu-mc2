@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { ViewHomeModule } from './views/view-home/view-home.module';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ViewHomeModule } from './views/view-home/view-home.module';
     HttpClientModule,
     NgbModule,
     CoreModule,
-    ViewHomeModule
+    ViewHomeModule,
+    UiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
