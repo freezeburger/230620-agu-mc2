@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ViewHomeComponent } from './views/view-home/view-home.component';
 
 const routes: Routes = [
   {
-    path:'home',
-    component:ViewHomeComponent
+    path: 'home',
+    loadChildren:()=> import('./views/view-home/view-home.module').then(m => m.ViewHomeModule)
+    ,title:'Homepage'
+  },
+  {
+    path: 'auth',
+    loadChildren:()=> import('./views/view-auth/view-auth.module').then(m => m.ViewAuthModule)
+    ,title:'Connection'
+  },
+  {
+    path: 'product',
+    loadChildren:()=> import('./views/view-product/view-product.module').then(m => m.ViewProductModule)
+    ,title:'Product'
   }
 ];
 
