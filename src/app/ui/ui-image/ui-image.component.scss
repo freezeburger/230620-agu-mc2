@@ -1,0 +1,19 @@
+:host{
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 15px;
+  position: relative;
+}
+
+img:not(.picto){
+  width: 100%;
+}
+
+.picto{
+  position: absolute;
+  margin: 10px;
+  z-index: 1;
+}

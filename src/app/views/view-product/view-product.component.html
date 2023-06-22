@@ -13,19 +13,11 @@
 <hr>
 
 <app-ui-image
+    *ngFor="let item of images"
     appImgZoom
     (selected)="onSelection($event)"
-    source="https://picsum.photos/200/300">
+    [source]=" item ">
 </app-ui-image>
 
-<app-ui-image
-  appImgZoom
-  (selected)="onSelection($event)"
-  [source]="  'https://picsum.photos/200/301'   ">
-</app-ui-image>
 
-<app-ui-image
-  (selected)="onSelection($event)"
-  appImgZoom>
-</app-ui-image>
 
