@@ -4,8 +4,10 @@
   height: 250px;
   overflow: hidden;
   box-sizing: border-box;
-  border-radius: 15px;
+  border-radius: 7px;
   position: relative;
+  box-sizing: border-box;
+  margin: 5px;
 }
 
 img:not(.picto){
