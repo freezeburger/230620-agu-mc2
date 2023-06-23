@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
 import { Process } from './interfaces/process';
 import { ApplicationState } from './interfaces/application-state';
 import { ProcessResponse, ProcessResponseType } from './interfaces/process-response';
+import { ProcessType } from './enums/process-type';
+import { ProcessScope } from './enums/process-scope';
 
 @Injectable()
 export class PresenterService {
@@ -26,7 +28,15 @@ export class PresenterService {
    */
   public execute( request:Process ):Observable<ProcessResponse>{
 
+    console.table(request);
+
     this.process$.next(request);
+
+    if(request.type === ProcessType.UPDATE && request.scope === ProcessScope.PRODUCT){
+      this.state$.next(
+        { ...this.state$.value, products:request.payload }
+      );
+    }
 
     return of({type:ProcessResponseType.ACCEPTED,process:request})
 

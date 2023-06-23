@@ -2,6 +2,8 @@ import { Component, Inject, QueryList, ViewChildren } from '@angular/core';
 import { AbstractViewComponent } from '../abstract-view/abstract-view.component';
 import { Product } from '../../core/interfaces/products';
 import { ProductService } from 'src/app/core/product.service';
+import { ProcessScope } from 'src/app/core/enums/process-scope';
+import { ProcessType } from 'src/app/core/enums/process-type';
 
 
 @Component({
@@ -13,13 +15,21 @@ export class ViewProductComponent  extends AbstractViewComponent {
 
   userInputValue = '';
 
-  constructor(
+  getProducts(){
+    this.presenter.execute({
+      scope:ProcessScope.PRODUCT,
+      type:ProcessType.READ,
+      payload:this.userInputValue
+    })
+  }
+
+ /*  constructor(
     @Inject(ProductService) public productService:ProductService
   ){
     super()
-  }
+  } */
 
-  public products:Product[]=[
+/*   public products:Product[]=[
     {
       id:1,
       title:'Title 1',
@@ -38,7 +48,7 @@ export class ViewProductComponent  extends AbstractViewComponent {
       description:'Description 3',
       thumbnail:'https://picsum.photos/200/303'
     }
-  ];
+  ]; */
   /*
   userSelectedImage = ''
 

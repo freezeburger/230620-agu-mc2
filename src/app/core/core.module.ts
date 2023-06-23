@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PresenterService } from './presenter.service';
 import { ProductService } from './product.service';
@@ -15,4 +15,6 @@ import { ProductService } from './product.service';
     ProductService
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+  productService = inject(ProductService);
+}
