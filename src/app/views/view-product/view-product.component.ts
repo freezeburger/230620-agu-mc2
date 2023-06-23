@@ -1,6 +1,7 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { AbstractViewComponent } from '../abstract-view/abstract-view.component';
-import { ImgZoomDirective } from 'src/app/ui/directives/img-zoom.directive';
+import { Product } from '../../core/interfaces/products';
+
 
 @Component({
   selector: 'app-view-product',
@@ -8,13 +9,35 @@ import { ImgZoomDirective } from 'src/app/ui/directives/img-zoom.directive';
   styleUrls: ['./view-product.component.scss']
 })
 export class ViewProductComponent  extends AbstractViewComponent {
+
+  public products:Product[]=[
+    {
+      id:1,
+      title:'Title 1',
+      description:'Description 1',
+      thumbnail:'https://picsum.photos/200/300'
+    },
+    {
+      id:2,
+      title:'Title 2',
+      description:'Description 2',
+      thumbnail:'https://picsum.photos/200/302'
+    },
+    {
+      id:1,
+      title:'Title 3',
+      description:'Description 3',
+      thumbnail:'https://picsum.photos/200/303'
+    }
+  ];
+  /*
   userSelectedImage = ''
 
   @ViewChildren(ImgZoomDirective) zoomables!:QueryList<ImgZoomDirective>;
 
   ngAfterViewInit(){
     this.zoomables.forEach( (z,i)  =>
-    setTimeout( () => z.zoomIn(), 2000 * (i + 1) )
+      setTimeout( () => z.zoomIn(), 2000 * (i + 1) )
     )
   }
 
@@ -28,4 +51,5 @@ export class ViewProductComponent  extends AbstractViewComponent {
   onSelection( url:string ){
     this.userSelectedImage = url;
   }
+  */
 }

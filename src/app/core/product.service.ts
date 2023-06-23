@@ -1,18 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Product } from './interfaces/products';
 
-export interface Product{
-  id:number;
-  title:string;
-  description:string;
-  thumbnail:string;
-}
 
 @Injectable()
 export class ProductService {
 
-  private readonly URL = '';
+  private readonly URL = "https://dummyjson.com/products/search?q=";
   private http = inject(HttpClient);
 
   public products$ = new BehaviorSubject<Product[]>([]);

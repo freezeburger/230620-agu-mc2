@@ -1,4 +1,4 @@
-import { Product } from "../product.service";
+import { Product } from "./products";
 
 export interface ApplicationState {
   online:boolean;
