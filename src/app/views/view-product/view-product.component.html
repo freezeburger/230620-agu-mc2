@@ -1,3 +1,24 @@
+<ng-container *ngIf="(productService.products$ | async) as products"></ng-container>
+
+<div class="alert alert-info" *ngIf="products.length === 0">
+  No Product
+</div>
+
+<input
+      type="text" class="form-control m-2"
+      (focus)="field.value = '' "
+      [(ngModel)]="userInputValue"
+      required
+      minlength="2"
+      #field>
+
+<span>{{userInputValue}}</span>
+
+<button
+  class="btn btn-success m-1"
+  placeholder="Type in to search"
+  (click)="productService.search('mac')">Load Products</button>
+
 <div class="card mb-3"  *ngFor="let product of products">
   <div class="row g-0">
     <div class="col-md-4">

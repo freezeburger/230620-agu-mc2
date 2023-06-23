@@ -1,6 +1,7 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component, Inject, QueryList, ViewChildren } from '@angular/core';
 import { AbstractViewComponent } from '../abstract-view/abstract-view.component';
 import { Product } from '../../core/interfaces/products';
+import { ProductService } from 'src/app/core/product.service';
 
 
 @Component({
@@ -9,6 +10,14 @@ import { Product } from '../../core/interfaces/products';
   styleUrls: ['./view-product.component.scss']
 })
 export class ViewProductComponent  extends AbstractViewComponent {
+
+  userInputValue = '';
+
+  constructor(
+    @Inject(ProductService) public productService:ProductService
+  ){
+    super()
+  }
 
   public products:Product[]=[
     {
